@@ -51,7 +51,7 @@ export function ModelMetrics() {
       </dl>
 
       <p className="mt-3 text-xs text-muted-foreground">
-        Evaluated on a held-out test dataset. Results may differ on real-world messages.
+        Evaluated on a held-out test dataset of 1,115 messages. Results may differ on real-world messages.
       </p>
     </section>
   )
