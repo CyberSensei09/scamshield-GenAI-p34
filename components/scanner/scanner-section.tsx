@@ -3,7 +3,7 @@
 import { AlertCircle, Brain, FlaskConical, Loader2, RotateCcw, ScanSearch } from 'lucide-react'
 import { useId, useRef, useState } from 'react'
 
-import { ExampleMessages } from '@/components/scanner/example-messages'
+import { ModelMetrics } from '@/components/scanner/model-metrics'
 import { ResultCard } from '@/components/scanner/result-card'
 import { SessionStats } from '@/components/scanner/session-stats'
 import { Button } from '@/components/ui/button'
@@ -60,13 +60,6 @@ export function ScannerSection({ modelConfigured }: { modelConfigured: boolean }
   function reset() {
     setMessage('')
     setResult(null)
-    setError(null)
-    setStatus('idle')
-    textareaRef.current?.focus()
-  }
-
-  function loadExample(text: string) {
-    setMessage(text)
     setError(null)
     setStatus('idle')
     textareaRef.current?.focus()
@@ -165,7 +158,7 @@ export function ScannerSection({ modelConfigured }: { modelConfigured: boolean }
           </form>
 
           <div className="flex flex-col gap-6 lg:col-span-2">
-            <ExampleMessages onSelect={loadExample} disabled={loading} />
+            <ModelMetrics />
             <SessionStats scans={stats.scans} flagged={stats.flagged} />
           </div>
         </div>
